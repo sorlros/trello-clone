@@ -1,6 +1,6 @@
 "use client";
 
-import { ListwithCards } from "@/types";
+import { ListWithCards } from "@/types";
 import { ListForm } from "./list-form";
 import { useEffect, useState } from "react";
 import { ListItem } from "./list-item";
@@ -11,7 +11,7 @@ import { updateListOrder } from "@/actions/update-list-order";
 import { updateCardOrder } from "@/actions/update-card-order";
 
 interface ListContainerProps {
-  data: ListwithCards[];
+  data: ListWithCards[];
   boardId: string;
 }
 

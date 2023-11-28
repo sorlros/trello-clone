@@ -1,6 +1,6 @@
 "use client";
 
-import { ListwithCards } from "@/types";
+import { ListWithCards } from "@/types";
 import { ListHeader } from "./list-header";
 import { useState, useRef, ElementRef } from "react";
 import { CardForm } from "./card-form";
@@ -9,7 +9,7 @@ import { CardItem } from "./card-item";
 import { Draggable, Droppable } from "@hello-pangea/dnd";
 
 interface ListItemProps {
-  data: ListwithCards;
+  data: ListWithCards;
   index: number;
 }
 

@@ -1,20 +1,16 @@
 "use client";
+
+import { toast } from "sonner";
+import { Plus, X } from "lucide-react";
+import { forwardRef, useRef, ElementRef, KeyboardEventHandler } from "react";
+import { useParams } from "next/navigation";
+import { useOnClickOutside, useEventListener } from "usehooks-ts";
+
+import { useAction } from "@/hooks/use-action";
 import { createCard } from "@/actions/create-card";
+import { Button } from "@/components/ui/button";
 import { FormSubmit } from "@/components/form/form-submit";
 import { FormTextarea } from "@/components/form/form-textarea";
-import { Button } from "@/components/ui/button";
-import { useAction } from "@/hooks/use-action";
-import { Plus, X } from "lucide-react";
-import { useParams } from "next/navigation";
-import {
-  ElementRef,
-  KeyboardEvent,
-  KeyboardEventHandler,
-  forwardRef,
-  useRef,
-} from "react";
-import { toast } from "sonner";
-import { useEventListener, useOnClickOutside } from "usehooks-ts";
 
 interface CardFormProps {
   listId: string;
@@ -67,15 +63,15 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
     if (isEditing) {
       return (
         <form
-          action={onSubmit}
           ref={formRef}
+          action={onSubmit}
           className="m-1 py-0.5 px-1 space-y-4"
         >
           <FormTextarea
             id="title"
             onKeyDown={onTextareakeyDown}
             ref={ref}
-            placeholder="Enter a title for this card"
+            placeholder="Enter a title for this card..."
             errors={fieldErrors}
           />
           <input hidden id="listId" name="listId" value={listId} />
@@ -97,7 +93,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
           size="sm"
           variant="ghost"
         >
-          <Plus className="w-4 h-4 mr-2" />
+          <Plus className="h-4 w-4 mr-2" />
           Add a card
         </Button>
       </div>

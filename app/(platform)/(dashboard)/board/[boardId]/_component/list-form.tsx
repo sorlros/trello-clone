@@ -24,7 +24,6 @@ export const ListForm = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   const enableEditing = () => {
-    console.log("clicked");
     setIsEditing(true);
     setTimeout(() => {
       inputRef.current?.focus();
